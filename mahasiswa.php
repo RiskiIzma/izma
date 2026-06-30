@@ -13,17 +13,17 @@
         Selamat Datang</h1>
     <table border="1" align="center" cellspacing="5px" cellpadding="10px">
         <tr>
-            <td><a href="index.html">Home</a></td>
-            <td><a href="about.html">Tentang</a></td>
-            <td><a href="contact.html">contact</a></td>
-            <td><a href="mahasiswa.html">Data mahasiswa</a></td>
+            <td><a href="index.php">Home</a></td>
+            <td><a href="about.php">Tentang</a></td>
+            <td><a href="contact.php">contact</a></td>
+            <td><a href="mahasiswa.php">Data mahasiswa</a></td>
         </tr>
 
     </table>
     <h2>
         Data Mahasiswa
     </h2>
-    <a href="TambahData.html">Tambah Data</a>
+    <a href="TambahData.php">Tambah Data</a>
 
     <table border="1" cellspacing="5px" cellspadding="10px">
         <tr>
@@ -42,16 +42,17 @@
             <td>1</td>
             <td>M. Zulfikar Dzulkarnain Dzulhijah</td>
             <td>3322114545</td>
-            <td><img src="aset/image/foto" width="70px" /></td>
-            <td align="center">98</td>
-            <td align="center">85</td>
-            <td align="center">50</td>
+            <td><img src="aset/image/lutffy" width="70x" /></td>
+            <td>
+                <a href="editdata.php"><button>Edit</button></a>
+                <a href="deletedata.php"><button>Hapus</button></a>
+            </td>
         </tr>
         <tr>
             <td>2</td>
             <td>Riski Izma Perdani</td>
             <td>3322114545</td>
-            <td><img src="aset/image/foto" width="70px" /></td>
+            <td><img src="aset/image/" width="70px" /></td>
             <td align="center">98</td>
             <td align="center">85</td>
             <td align="center">50</td>
