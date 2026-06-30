@@ -27,37 +27,44 @@
 
     <table border="1" cellspacing="5px" cellspadding="10px">
         <tr>
-            <th rowspan="2">No</th>
-            <th rowspan="2">Nama</th>
-            <th rowspan="2">Nim</th>
-            <th rowspan="2">Foto </th>
-            <th colspan="3"> Nilai </th>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Nim</th>
+            <th >Jurusan</th>
+            <th>Email</th>
+            <th>no_hp</th>
+            <th>Foto </th>
+            <th> Aksi </th>
         </tr>
-        <tr>
-            <th> UAS </th>
-            <th> UTS </th>
-            <th>Tugas</th>
-        </tr>
-        <tr>
+            
             <td>1</td>
             <td>M. Zulfikar Dzulkarnain Dzulhijah</td>
             <td>3322114545</td>
-            <td><img src="aset/image/lutffy" width="70x" /></td>
+            <td align="center">Teknologi Informasi</td>
+            <td align="center">zul@gmail.com</td>
+            <td align="center">081239789006</td>
+            <td><img src="aset/image/lutffy.jpg" width="70px" /></td>
             <td>
                 <a href="editdata.php"><button>Edit</button></a>
                 <a href="deletedata.php"><button>Hapus</button></a>
             </td>
         </tr>
+        
         <tr>
             <td>2</td>
             <td>Riski Izma Perdani</td>
             <td>3322114545</td>
-            <td><img src="aset/image/" width="70px" /></td>
-            <td align="center">98</td>
-            <td align="center">85</td>
-            <td align="center">50</td>
+            <td align="center">Teknologi Informasi</td>
+            <td align="center">riskiizmap@gmail.com</td>
+            <td align="center">082339726293</td>
+            <td><img src="aset/image/lutffy.jpg" width="70px" /></td>
+        <td>
+                <a href="editdata.php"><button>Edit</button></a>
+                <a href="deletedata.php"><button>Hapus</button></a>
+                
+        </td>
         </tr>
-        <table border="1" cellspacing="5px" cellspandding="10px">
+        <table border="2" cellspacing="5px" cellspandding="10px">
             <tr>
                 <td>1,1</td>
                 <td>1,2</td>
