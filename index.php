@@ -14,15 +14,15 @@
             Selamat Datang</h1>
         <table border="1" align="center" cellspacing="5px" cellpadding="10px">
             <tr>
-                <td><a href="index.html">Home</a></td>
-                <td><a href="about.html">Tentang</a></td>
-                <td><a href="contact.html">contact</a></td>
-                <td><a href="mahasiswa.html">Data mahasiswa</a></td>
+                <td><a href="index.php">Home</a></td>
+                <td><a href="about.php">Tentang</a></td>
+                <td><a href="contact.php">contact</a></td>
+                <td><a href="mahasiswa.php">Data mahasiswa</a></td>
             </tr>
 
         </table>
         <center>
-            <img src="foto 1.jpg" width="200px" />
+            <img src="aset/image/foto 1.jpg" width="200px" />
         </center>
         <p>Ini adalah website sederhana yang menceritkan
             tentang diri saya</p>

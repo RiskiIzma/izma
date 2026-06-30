@@ -1,3 +1,39 @@
+<?php
+
+    require 'fungsi.php';
+
+    if(isset($_POST["kirim"]))
+        {
+            $nama = $_POST["nama"];
+            $nim = $_POST["nim"];
+            $email = $_POST["email"];
+            $prodi = $_POST["jurusan"];
+            $nohp = $_POST["nohp"];
+            $foto = $_POST["foto"];
+
+            $query = "INSERT INTO mahasiswa (nama, nim, jurusan, email, no_hp, foto) 
+                        VALUES ('$nama', '$nim', '$prodi', '$email', '$nohp', '$foto')";
+
+            mysqli_query($koneksi,$query);
+
+            if(mysqli_affected_rows($koneksi))
+                {
+                    echo "<script>
+                        alert('Data berhasil ditambahkan');
+                        window.location.href='mahasiswa.php';
+                    </script>";
+                }
+                else
+                {
+                    echo "<script>
+                        alert('Data gagal ditambahkan');
+                        window.location.href='mahasiswa.php';
+                    </script>";
+                }
+        }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="aset/css/style.css">
@@ -11,127 +47,45 @@
 <body>
     <h2>Tambah Data Mahasiswa</h2>
 
-    <form action="mahasiswa.html" method="post"></form>
-
-    <form action="mahasiswa.html" method="post">
+    <form action="" method="post">
 
         <table cellpadding="5px">
             <tr>
                 <td><label for="nama">Nama</label></td>
                 <td>:</td>
-                <td><input type="text" id="nama" name="nama" /></td>
+                <td><input type="text" id="nama" name="nama" required /></td>
             </tr>
 
             <tr>
                 <td><label for="Nim">Nim</label></td>
                 <td>:</td>
-                <td><input type="number" id="nim" name="nim" /></td>
+                <td><input type="text" id="nim" name="nim" required /></td>
             </tr>
+            <tr>
+                <td><label for="jurusan">Jurusan</label></td>
+                <td>:</td>
+                <td><input type="text" id="jurusan" name="jurusan"  required/></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email</label></td>
+                <td>:</td>
+                <td><input type="email" id="email" name="email" required/></td>
+            </tr>
+
+            <tr>
+                <td><label for="no_hp">Nomor HP</label></td>
+                <td>:</td>
+                <td><input type="number" id="nohp" name="nohp" required /></td>
+            </tr>
+
             <tr>
                 <td><label for="foto">Foto</label></td>
                 <td>:</td>
-                <td><input type="file" id="Foto" name="foto" /></td>
+                <td><input type="text" id="foto" name="foto" required /></td>
             </tr>
-            <tr>
-                <td><label for="uts">UTS</label></td>
-                <td>:</td>
-                <td><input type="number" id="uts" name="uts" /></td>
-            </tr>
-
-            <tr>
-                <td><label for="uas">UAS</label></td>
-                <td>:</td>
-                <td><input type="number" id="uas" name="uas" /></td>
-            </tr>
-
-            <tr>
-                <td><label for="tugas">Tugas</label></td>
-                <td>:</td>
-                <td><input type="number" id="tugas" name="tugas" /></td>
-            </tr>
-            <tr>
-                <td><label>Password</label></td>
-                <td>:</td>
-                <td><input type="password" name="password"></td>
-            </tr>
-
-            <tr>
-                <td><label>Email</label></td>
-                <td>:</td>
-                <td><input type="email" name="email"></td>
-            </tr>
-
-            <tr>
-                <td><label>No HP</label></td>
-                <td>:</td>
-                <td><input type="tel" name="hp"></td>
-            </tr>
-
-            <tr>
-                <td><label>Website pribadi</label></td>
-                <td>:</td>
-                <td><input type="url" name="web"></td>
-            </tr>
-
-            <tr>
-                <td><label>Tanggal lahir</label></td>
-                <td>:</td>
-                <td><input type="date" name="tgl"></td>
-            </tr>
-
-            <tr>
-                <td><label>Warna favorit</label></td>
-                <td>:</td>
-                <td><input type="color" name="warna"></td>
-            </tr>
-
-            <tr>
-                <td><label>Tingkat kepuasan</label></td>
-                <td>:</td>
-                <td><input type="range" name="range" min="0" max="100"></td>
-            </tr>
-
-            <tr>
-                <td><label>Jenis kelamin</label></td>
-                <td>:</td>
-                <td>
-                    <input type="radio" name="jk" value="L"> Laki-laki
-                    <input type="radio" name="jk" value="P"> Perempuan
-                </td>
-            </tr>
-
-            <tr>
-                <td><label>Hobi</label></td>
-                <td>:</td>
-                <td>
-                    <input type="checkbox" name="hobi"> Membaca
-                    <input type="checkbox" name="hobi"> Gaming
-                    <input type="checkbox" name="hobi"> Olahraga
-                </td>
-            </tr>
-
-            <tr>
-                <td><label>Alamat</label></td>
-                <td>:</td>
-                <td><textarea name="alamat"></textarea></td>
-            </tr>
-
-            <tr>
-                <td><label>Jurusan</label></td>
-                <td>:</td>
-                <td>
-                    <select name="jurusan">
-                        <option value="">-- Pilih --</option>
-                        <option>Teknologi Informasi</option>
-                        <option>Sistem Informasi</option>
-                        <option>Manajemen Informatika</option>
-                    </select>
-                </td>
-            </tr>
-
             <tr>
                 <td colspan="3">
-                    <button type="submit" name="submit">Tambah Data</button>
+                    <button type="submit" name="kirim">Tambah Data</button>
                 </td>
             </tr>
 

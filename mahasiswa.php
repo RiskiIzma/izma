@@ -1,3 +1,16 @@
+<?php
+    
+    require 'fungsi.php';
+
+    $koneksi = mysqli_connect("localhost", "root", "", "izaweekly");
+
+    $query = "SELECT * FROM mahasiswa"; /// perintah
+    $mahasiswas = tampildata($koneksi, $query); //// wadah berisi data
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="aset/css/style.css">
@@ -36,62 +49,25 @@
             <th>Foto </th>
             <th> Aksi </th>
         </tr>
-            
-            <td>1</td>
-            <td>M. Zulfikar Dzulkarnain Dzulhijah</td>
-            <td>3322114545</td>
-            <td align="center">Teknologi Informasi</td>
-            <td align="center">zul@gmail.com</td>
-            <td align="center">081239789006</td>
+        <?php
+            $no = 1;
+            foreach($mahasiswas as $mhs) 
+                {
+        ?>
+        <tr>
+            <td align="center"><?= $no++ ?></td>
+            <td><?php echo $mhs["nama"] ?></td>
+            <td><?php echo $mhs["nim"] ?></td>
+            <td align="center"><?php echo $mhs["jurusan"] ?></td>
+            <td align="center"><?php echo $mhs["email"] ?></td>
+            <td align="center"><?php echo $mhs["no_hp"] ?></td>
             <td><img src="aset/image/lutffy.jpg" width="70px" /></td>
             <td>
                 <a href="editdata.php"><button>Edit</button></a>
                 <a href="deletedata.php"><button>Hapus</button></a>
             </td>
         </tr>
-        
-        <tr>
-            <td>2</td>
-            <td>Riski Izma Perdani</td>
-            <td>3322114545</td>
-            <td align="center">Teknologi Informasi</td>
-            <td align="center">riskiizmap@gmail.com</td>
-            <td align="center">082339726293</td>
-            <td><img src="aset/image/lutffy.jpg" width="70px" /></td>
-        <td>
-                <a href="editdata.php"><button>Edit</button></a>
-                <a href="deletedata.php"><button>Hapus</button></a>
-                
-        </td>
-        </tr>
-        <table border="2" cellspacing="5px" cellspandding="10px">
-            <tr>
-                <td>1,1</td>
-                <td>1,2</td>
-                <td>1,3</td>
-                <td>1,4</td>
-            </tr>
-            <tr>
-                <td>2,1</td>
-                <td rowspan="2" colspan="2" align="center"> ? </td>
-                <td>2,4</td>
-                <!-- <td>2,4</td> -->
-            </tr>
-            <tr>
-                <td>3,1</td>
-                <td>3,4</td>
-            </tr>
-            <tr>
-                <td>4,1</td>
-                <td>4,2</td>
-                <td>4,3</td>
-                <td>4,4</td>
-            </tr>
-        </table>
-
-        </h2>
-    </table>
-    <hr />
+        <?php } ?>
 </body>
 
 </html>
